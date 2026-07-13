@@ -6,7 +6,7 @@ colorTo: gray
 sdk: docker
 app_port: 3000
 pinned: false
-short_description: Concept UAE real-estate portal with an AI property matcher & chatbot.
+short_description: Concept UAE real-estate portal with AI matcher.
 ---
 
 # Meridian Estates — concept UAE real-estate portal
