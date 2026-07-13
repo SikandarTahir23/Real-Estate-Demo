@@ -1,0 +1,163 @@
+// Meridian Estates — Prisma schema
+// Backing store for the AI Property Matcher and the RAG (retrieval-augmented
+// generation) layer. Target: Neon PostgreSQL. See DATABASE_URL in .env.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ---------------------------------------------------------------------------
+// Enums — constrain domain values at the database level (Prisma best practice).
+// Mirrors the union types used throughout the app (spec §3/§4).
+// ---------------------------------------------------------------------------
+
+enum PropertyType {
+  Apartment
+  Villa
+  Townhouse
+  Penthouse
+}
+
+enum Purpose {
+  Buy
+  Rent
+}
+
+enum PropertyStatus {
+  Ready
+  OffPlan
+}
+
+enum MessageRole {
+  user
+  assistant
+  system
+}
+
+// ---------------------------------------------------------------------------
+// Core catalogue
+// ---------------------------------------------------------------------------
+
+model Property {
+  id                 String         @id @default(cuid())
+  slug               String         @unique
+  title              String
+  type               PropertyType
+  purpose            Purpose
+  status             PropertyStatus
+  area               String
+  emirate            String
+  developer          String
+  priceAED           Int
+  sizeSqft           Int
+  beds               Int
+  baths              Int
+  floor              Int? // villas/townhouses have no single floor
+  handoverQuarter    String? // only meaningful for off-plan
+  amenities          String[]
+  description        String         @db.Text
+  highlights         String[]
+  grossYieldEstimate Float? // investor estimate, not always published
+  featured           Boolean        @default(false)
+  thumbColor         String
+  createdAt          DateTime       @default(now())
+  updatedAt          DateTime       @updatedAt
+
+  // Indexes matching the filter facets exposed by the listings FilterBar and
+  // the deterministic matcher ranking (type/purpose/area/beds/price/status).
+  @@index([type])
+  @@index([purpose])
+  @@index([status])
+  @@index([area])
+  @@index([emirate])
+  @@index([beds])
+  @@index([priceAED])
+  @@index([featured])
+}
+
+model Agent {
+  id              String   @id @default(cuid())
+  name            String
+  initials        String
+  yearsExperience Int
+  languages       String[]
+  speciality      String
+  whatsapp        String
+  createdAt       DateTime @default(now())
+}
+
+model Testimonial {
+  id             String   @id @default(cuid())
+  clientInitials String
+  clientOrigin   String
+  rating         Int
+  quote          String   @db.Text
+  propertyType   String?
+  date           DateTime
+}
+
+// ---------------------------------------------------------------------------
+// RAG store — source documents split into embedded chunks for retrieval.
+// ---------------------------------------------------------------------------
+
+model Document {
+  id        String   @id @default(cuid())
+  title     String
+  content   String   @db.Text
+  source    String
+  metadata  Json     @default("{}")
+  createdAt DateTime @default(now())
+
+  chunks DocumentChunk[]
+
+  @@index([source])
+}
+
+model DocumentChunk {
+  id         String  @id @default(cuid())
+  documentId String
+  chunkIndex Int
+  content    String  @db.Text
+  // Embedding vector stored as a native double-precision array. This is
+  // portable and pushes without extra extensions; swap to pgvector's
+  // `vector` type later if approximate-nearest-neighbour indexing is needed.
+  embedding  Float[]
+  metadata   Json    @default("{}")
+
+  document Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+
+  // A document's chunks are ordered and unique by position.
+  @@unique([documentId, chunkIndex])
+  @@index([documentId])
+}
+
+// ---------------------------------------------------------------------------
+// Chat / conversation history for the matcher assistant.
+// ---------------------------------------------------------------------------
+
+model Conversation {
+  id        String   @id @default(cuid())
+  sessionId String
+  createdAt DateTime @default(now())
+
+  messages Message[]
+
+  @@index([sessionId])
+}
+
+model Message {
+  id             String      @id @default(cuid())
+  conversationId String
+  role           MessageRole
+  content        String      @db.Text
+  createdAt      DateTime    @default(now())
+
+  conversation Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+
+  @@index([conversationId])
+}

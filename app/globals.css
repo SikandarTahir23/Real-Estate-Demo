@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-stone font-body text-ink antialiased;
+  }
+
+  /* Display headings default to Space Grotesk with tight tracking (§1 typography). */
+  h1,
+  h2 {
+    @apply font-display tracking-tight;
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+  }
+
+  /* Token-colored, always-visible keyboard focus ring on every interactive element
+     (§13 accessibility floor). Brass-dark passes AA contrast on light surfaces (§1.1). */
+  :focus-visible {
+    @apply outline-none ring-2 ring-brass-dark ring-offset-2 ring-offset-stone;
+  }
+
+  /* Global reduced-motion safety net (§11). Individual animated elements still carry
+     motion-reduce:* utilities, but this guarantees nothing animates for users who
+     opt out, even if a utility is missed. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* Numeric data face (§1, §14 item 11): applied ONLY to numbers — price, sqft,
+     beds/baths, ROI %, monthly payment. Numerals stay LTR-embedded inside RTL text
+     (§8) so prices always read left-to-right. */
+  .font-data {
+    font-variant-numeric: tabular-nums;
+    direction: ltr;
+    unicode-bidi: isolate;
+  }
+}

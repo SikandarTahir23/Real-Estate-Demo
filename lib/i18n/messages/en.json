@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "title": "Meridian Estates — Prime addresses across the Emirates",
+    "description": "Discover prime residential property across Dubai and Abu Dhabi. Search by need with our AI matcher, estimate mortgages, and explore ready and off-plan homes."
+  },
+  "nav": {
+    "home": "Home",
+    "listings": "Listings",
+    "calculator": "Calculator",
+    "about": "About",
+    "contact": "Contact",
+    "enquire": "Enquire",
+    "toggleLocale": "العربية",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "brand": "Meridian Estates"
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "viewDetails": "View details",
+    "loading": "Loading"
+  },
+  "footer": {
+    "tagline": "Prime addresses across the Emirates",
+    "disclosure": "Meridian Estates is a concept portfolio project built to demonstrate real estate web and AI patterns. Listings, pricing, agent profiles, and client reviews are illustrative and not affiliated with any real brokerage.",
+    "rights": "Meridian Estates — concept demo.",
+    "sections": {
+      "explore": "Explore",
+      "company": "Company",
+      "contact": "Contact"
+    }
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "UAE Residential",
+      "title": "Prime addresses across the Emirates",
+      "subtitle": "Precise, engineered property search for Dubai and Abu Dhabi — ready homes, off-plan opportunities, and investor-grade insight."
+    },
+    "featured": {
+      "title": "Featured properties",
+      "subtitle": "A hand-picked selection across Dubai and Abu Dhabi.",
+      "viewAll": "View all listings"
+    },
+    "trust": {
+      "label": "Meridian Estates at a glance",
+      "stats": {
+        "transactions": {
+          "value": "500+",
+          "label": "Transactions facilitated"
+        },
+        "represented": {
+          "value": "AED 2B+",
+          "label": "In property represented"
+        },
+        "regulated": {
+          "value": "Locally",
+          "label": "Licensed & regulated"
+        }
+      }
+    },
+    "testimonials": {
+      "title": "Client reviews",
+      "subtitle": "What buyers and investors say about working with our advisors.",
+      "ratingLabel": "Rated {rating} out of 5"
+    },
+    "calculatorTeaser": {
+      "title": "Try the mortgage calculator",
+      "body": "Estimate a monthly payment and rental yield in seconds — no sign-up needed.",
+      "cta": "Open the calculator"
+    }
+  },
+  "listings": {
+    "title": "Listings",
+    "subtitle": "Ready homes and off-plan opportunities across Dubai and Abu Dhabi. Filter by what matters to you.",
+    "resultCount": "{count, plural, =0 {No properties match your filters} one {# property} other {# properties}}",
+    "emptyTitle": "No properties match your filters",
+    "emptyBody": "Try widening your price range or clearing a filter to see more homes.",
+    "clearFilters": "Clear all filters"
+  },
+  "filters": {
+    "title": "Filter listings",
+    "type": "Type",
+    "anyType": "Any type",
+    "location": "Location",
+    "anyLocation": "Any location",
+    "price": "Price",
+    "anyPrice": "Any price",
+    "priceBracket": {
+      "lt1m": "Under 1M AED",
+      "1to3m": "1M – 3M AED",
+      "3to6m": "3M – 6M AED",
+      "6to10m": "6M – 10M AED",
+      "gte10m": "10M+ AED"
+    },
+    "beds": "Beds",
+    "anyBeds": "Any beds",
+    "bedsMin": "{count}+ beds",
+    "status": "Status",
+    "anyStatus": "Any status",
+    "purpose": "Purpose",
+    "anyPurpose": "Buy or rent",
+    "reset": "Reset filters"
+  },
+  "property": {
+    "beds": "Bedrooms",
+    "baths": "Bathrooms",
+    "size": "Size",
+    "studio": "Studio",
+    "bedsValue": "{count, plural, one {# bed} other {# beds}}",
+    "bathsValue": "{count, plural, one {# bath} other {# baths}}",
+    "sqftValue": "{value} sqft",
+    "perYear": "per year",
+    "viewDetails": "View details"
+  },
+  "propertyType": {
+    "Apartment": "Apartment",
+    "Villa": "Villa",
+    "Townhouse": "Townhouse",
+    "Penthouse": "Penthouse"
+  },
+  "status": {
+    "Ready": "Ready",
+    "OffPlan": "Off-Plan"
+  },
+  "purpose": {
+    "Buy": "Buy",
+    "Rent": "Rent"
+  },
+  "detail": {
+    "breadcrumb": {
+      "label": "Breadcrumb",
+      "backToListings": "Back to listings"
+    },
+    "developerBy": "By {developer}",
+    "sections": {
+      "specs": "Specifications",
+      "about": "About this property",
+      "highlights": "Highlights",
+      "amenities": "Amenities",
+      "floorPlan": "Floor plan",
+      "similar": "Similar properties"
+    },
+    "gallery": {
+      "label": "Property gallery",
+      "illustrative": "Illustrative",
+      "viewAlt": "{title} — {room} (illustrative view)",
+      "views": {
+        "exterior": "Exterior",
+        "living": "Living area",
+        "kitchen": "Kitchen",
+        "bedroom": "Bedroom",
+        "view": "Outlook",
+        "amenities": "Amenities"
+      }
+    },
+    "floorPlan": {
+      "alt": "Illustrative schematic floor plan of {title}",
+      "caption": "Illustrative floor plan — not to scale."
+    },
+    "spec": {
+      "price": "Price",
+      "pricePerSqft": "Price / sqft",
+      "perSqftValue": "{value} / sqft",
+      "size": "Size",
+      "sqftValue": "{value} sqft",
+      "beds": "Bedrooms",
+      "studio": "Studio",
+      "baths": "Bathrooms",
+      "floor": "Floor",
+      "status": "Status",
+      "handover": "Handover",
+      "grossYield": "Gross yield (est.)",
+      "yieldValue": "{value}%"
+    },
+    "agent": {
+      "experience": "Experience",
+      "yearsValue": "{count, plural, one {# year} other {# years}}",
+      "languages": "Languages",
+      "whatsapp": "Message on WhatsApp",
+      "propertyMessage": "Hi! I'm interested in {title} — could you share more details?"
+    },
+    "viewing": {
+      "title": "Request a viewing",
+      "subtitle": "Send a message on WhatsApp and an advisor will confirm a time.",
+      "dateLabel": "Preferred date (optional)",
+      "cta": "Request a viewing",
+      "messageWithDate": "Marhaba! I'd like to arrange a viewing for {title}. My preferred date is {date}.",
+      "messageNoDate": "Marhaba! I'd like to arrange a viewing for {title}."
+    },
+    "calculatorTeaser": {
+      "title": "Estimate your mortgage",
+      "body": "See an estimated monthly payment for this property.",
+      "cta": "Open the calculator"
+    }
+  },
+  "whatsapp": {
+    "general": "Marhaba! I'd like to speak with a Meridian Estates advisor."
+  },
+  "matcher": {
+    "label": "Find your match",
+    "hint": "Describe what you're looking for — our matcher does the rest.",
+    "placeholder": "e.g. 3 bed villa near good schools, around 4.5 million",
+    "search": "Match",
+    "searching": "Matching…",
+    "tryLabel": "Try:",
+    "examples": {
+      "villa": "5 bedroom villa on the Palm with a private beach",
+      "studio": "Studio to rent in Business Bay under 100k"
+    },
+    "understood": "Understood as:",
+    "chipBeds": "{count}+ beds",
+    "chipUnder": "Under {value}M AED",
+    "whyLabel": "Why it fits",
+    "fallbackNote": "Showing best-guess matches — our AI matcher is momentarily unavailable.",
+    "noResults": "No close matches yet — try adjusting your budget or area.",
+    "error": "Something went wrong. Please try again."
+  },
+  "calculator": {
+    "title": "Mortgage & ROI Calculator",
+    "intro": "Estimate a monthly mortgage payment and gross rental yield. Adjust the sliders — figures update live.",
+    "prefilledNote": "Pre-filled with the price of the property you were viewing.",
+    "estimateTag": "Estimate",
+    "disclaimer": "All figures are illustrative estimates for demonstration only and are not live bank rates, offers, or financial advice. The DLD 4% transfer fee reflects a public Dubai Land Department regulation. Confirm all figures with a licensed advisor.",
+    "percentValue": "{value}%",
+    "yearsValue": "{count, plural, one {# year} other {# years}}",
+    "mortgage": {
+      "title": "Mortgage estimate",
+      "subtitle": "Estimated monthly repayment for a UAE residential mortgage.",
+      "price": "Property price",
+      "downPayment": "Down payment",
+      "rate": "Interest rate",
+      "tenure": "Loan tenure",
+      "monthlyPayment": "Monthly payment",
+      "downPaymentAmount": "Down payment",
+      "loanAmount": "Loan amount",
+      "totalInterest": "Total interest",
+      "dldFee": "DLD transfer fee (4%)"
+    },
+    "roi": {
+      "title": "Rental yield estimate",
+      "subtitle": "Gross rental yield based on price and expected annual rent.",
+      "price": "Property price",
+      "annualRent": "Annual rent",
+      "grossYield": "Gross yield",
+      "monthlyRent": "Monthly rent"
+    }
+  },
+  "about": {
+    "eyebrow": "About Meridian",
+    "title": "A concept portal, engineered like a real one",
+    "body1": "Meridian Estates is a concept portfolio project. It was built to demonstrate the web and AI patterns a modern UAE property portal needs — dense structured filtering, a structured-extraction AI matcher, real property detail pages, and interactive financial tooling — end to end and production-quality.",
+    "body2": "Everything you see is designed the way a live product would be: precise, fast, accessible, and bilingual. The listings, developers, advisors, and reviews are illustrative, so the focus stays on the engineering rather than any specific inventory.",
+    "agentsTitle": "Meet the advisors",
+    "agentsSubtitle": "Illustrative advisor profiles, each with a direct WhatsApp line.",
+    "disclosureTitle": "About this project",
+    "disclosureBody": "Meridian Estates is a concept portfolio project built to demonstrate real estate web and AI patterns. Listings, pricing, agent profiles, and client reviews are illustrative and not affiliated with any real brokerage."
+  },
+  "contact": {
+    "title": "Contact us",
+    "subtitle": "Send a message and an advisor will be in touch, or reach us directly.",
+    "name": "Full name",
+    "email": "Email address",
+    "message": "How can we help?",
+    "submit": "Send message",
+    "successTitle": "Thanks — message received",
+    "successBody": "This is a concept demo, so no message is actually sent. In production this would reach an advisor. Meanwhile, feel free to message us on WhatsApp.",
+    "errors": {
+      "name": "Please enter your name.",
+      "email": "Please enter a valid email address.",
+      "message": "Please enter a little more detail (at least 10 characters)."
+    },
+    "channels": {
+      "whatsapp": "WhatsApp",
+      "whatsappValue": "Message us",
+      "phone": "Phone",
+      "phoneValue": "+971 4 000 0000",
+      "phoneHref": "+97140000000",
+      "email": "Email",
+      "emailValue": "advisors@meridian-estates.example"
+    },
+    "mapTitle": "Map of the Meridian Estates demo office location",
+    "mapNote": "Illustrative location for this concept demo."
+  },
+  "fab": {
+    "label": "Chat with a Meridian Estates advisor on WhatsApp"
+  },
+  "chat": {
+    "launcher": "Open the Meridian Estates assistant",
+    "close": "Close chat",
+    "title": "Meridian Assistant",
+    "subtitle": "AI concierge · concept demo",
+    "greeting": "Hi! I can help you explore listings, compare areas, or estimate costs. What are you looking for?",
+    "placeholder": "Ask about listings, areas, or budgets…",
+    "inputLabel": "Type your message to the assistant",
+    "send": "Send",
+    "typing": "Assistant is typing",
+    "error": "Something went wrong. Please try again."
+  }
+}
