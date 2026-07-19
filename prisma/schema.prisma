@@ -64,7 +64,9 @@ model Property {
   highlights         String[]
   grossYieldEstimate Float? // investor estimate, not always published
   featured           Boolean        @default(false)
-  thumbColor         String
+  // Ordered gallery of { src, room } image objects, stored as JSON. Mirrors the
+  // Property.images array in lib/properties.ts.
+  images             Json           @default("[]")
   createdAt          DateTime       @default(now())
   updatedAt          DateTime       @updatedAt
 

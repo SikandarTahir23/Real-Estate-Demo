@@ -2,11 +2,9 @@
 
 import { useTranslations } from 'next-intl'
 
-// Trust band (spec §2, §10): a 3-column ink strip of GENERIC trust stats only. Per §10
-// and §14 item 7, these must never name a specific real regulator (no "RERA-certified",
-// no real DLD registration number) as if Meridian Estates holds it — that would cross
-// from demo content into a false regulatory claim. The copy lives in i18n and is
-// deliberately descriptive ("Locally licensed & regulated"), not attributed.
+// Trust band (spec §2): a 3-column ink strip of trust stats. The copy avoids naming a
+// specific regulator or registration number the company cannot substantiate, staying
+// descriptive ("Locally licensed & regulated"). The copy lives in i18n.
 //
 // Stat figures are rendered in font-data (§1) since they are numeric/data.
 const STAT_KEYS = ['transactions', 'represented', 'regulated'] as const

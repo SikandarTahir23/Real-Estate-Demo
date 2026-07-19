@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { useFormatter, useTranslations } from 'next-intl'
 import type { Property } from '@/types'
@@ -22,6 +23,10 @@ export function PropertyCard({ property, index = 0 }: PropertyCardProps) {
 
   const staggerDelay = index < STAGGER_CAP ? index * STAGGER_STEP_MS : 0
 
+  // Card thumbnail is the first gallery image. The first few cards are likely
+  // above the fold, so prioritise their images and lazy-load the rest.
+  const cover = property.images[0]
+
   // AED formatting via next-intl (Intl.NumberFormat under the hood) — the reason for
   // the i18n upgrade (§8): figures localize correctly and Arabic numerals render in
   // RTL. All numeric specs use font-data (IBM Plex Mono), the signature data face (§1).
@@ -43,16 +48,18 @@ export function PropertyCard({ property, index = 0 }: PropertyCardProps) {
           'transition-transform duration-150 hover:scale-[1.01] motion-reduce:transition-none',
         )}
       >
-        {/* Decorative gradient placeholder standing in for photography (§5 item 5,
-            §9). Marked aria-hidden — it carries no information a screen reader needs;
-            the title and specs below do. */}
-        <div
-          aria-hidden="true"
-          className={cn(
-            'relative aspect-[4/3] bg-gradient-to-br',
-            property.thumbColor,
-          )}
-        >
+        {/* Cover photograph — the first gallery image, optimized via next/image.
+            sizes reflects the responsive grid (1 / 2 / 3 columns) so the browser
+            fetches an appropriately scaled source. */}
+        <div className="relative aspect-[4/3] overflow-hidden bg-stone">
+          <Image
+            src={cover.src}
+            alt={t('imageAlt', { title: property.title })}
+            fill
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            priority={index < 3}
+            className="object-cover transition-transform duration-300 group-hover:scale-[1.04] motion-reduce:transition-none"
+          />
           <div className="absolute left-3 top-3">
             <StatusTag status={property.status} />
           </div>

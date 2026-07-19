@@ -1,9 +1,9 @@
 import type { Property } from '@/types'
 
-// Static listings data (spec §4). Populated verbatim from the specification's 8-listing
-// minimum with UAE-accurate specs and realistic AED pricing. Developer names are
-// fictional (§10). Static-array-over-CMS is the documented Phase-scale trade-off
-// (§14 item 1): zero infra for the demo, and this exact Property shape is the intended
+// Static listings data (spec §4). UAE-accurate specs and realistic AED pricing.
+// Each listing carries an ordered `images` gallery of locally-hosted, optimized
+// photographs (served via next/image) — the first image is the card thumbnail and the
+// full set drives the detail-page gallery. This exact Property shape is the intended
 // production CMS schema so the migration path stays trivial.
 export const properties: Property[] = [
   {
@@ -28,7 +28,14 @@ export const properties: Property[] = [
     grossYieldEstimate: 6.2,
     agentId: 'a1',
     featured: true,
-    thumbColor: 'from-slate-800 to-steel-dark',
+    images: [
+      { src: '/images/library/tower-dusk.jpg', room: 'exterior' },
+      { src: '/images/library/living-skyline.jpg', room: 'living' },
+      { src: '/images/library/kitchen-sleek.jpg', room: 'kitchen' },
+      { src: '/images/library/bedroom-white.jpg', room: 'bedroom' },
+      { src: '/images/library/view-city-skyline.jpg', room: 'view' },
+      { src: '/images/library/bathroom-vanity.jpg', room: 'bathroom' },
+    ],
   },
   {
     id: 'p2',
@@ -55,7 +62,14 @@ export const properties: Property[] = [
     grossYieldEstimate: 4.1,
     agentId: 'a2',
     featured: true,
-    thumbColor: 'from-brass-dark to-brass',
+    images: [
+      { src: '/images/library/villa-pool-exterior.jpg', room: 'exterior' },
+      { src: '/images/library/living-warm.jpg', room: 'living' },
+      { src: '/images/library/kitchen-island.jpg', room: 'kitchen' },
+      { src: '/images/library/bedroom-suite.jpg', room: 'bedroom' },
+      { src: '/images/library/pool-deck.jpg', room: 'pool' },
+      { src: '/images/library/view-sea.jpg', room: 'view' },
+    ],
   },
   {
     id: 'p3',
@@ -82,7 +96,14 @@ export const properties: Property[] = [
     ],
     grossYieldEstimate: 5.8,
     agentId: 'a1',
-    thumbColor: 'from-emerald-800 to-steel',
+    images: [
+      { src: '/images/library/house-facade.jpg', room: 'exterior' },
+      { src: '/images/library/living-open.jpg', room: 'living' },
+      { src: '/images/library/kitchen-fitted.jpg', room: 'kitchen' },
+      { src: '/images/library/bedroom-styled.jpg', room: 'bedroom' },
+      { src: '/images/library/bathroom-modern.jpg', room: 'bathroom' },
+      { src: '/images/library/terrace-outdoor.jpg', room: 'terrace' },
+    ],
   },
   {
     id: 'p4',
@@ -104,7 +125,12 @@ export const properties: Property[] = [
       'A studio built for the canal-side lifestyle, walking distance to the boardwalk. Efficient rather than compact — a full kitchen, a genuine sleeping zone, and a balcony that catches the water rather than the podium.',
     highlights: ['Furnished option available', 'Metro-adjacent', 'Chiller-free'],
     agentId: 'a3',
-    thumbColor: 'from-steel-dark to-ink',
+    images: [
+      { src: '/images/library/living-bright.jpg', room: 'living' },
+      { src: '/images/library/kitchen-pendant.jpg', room: 'kitchen' },
+      { src: '/images/library/bathroom-clean.jpg', room: 'bathroom' },
+      { src: '/images/library/view-city-skyline.jpg', room: 'view' },
+    ],
   },
   {
     id: 'p5',
@@ -131,7 +157,14 @@ export const properties: Property[] = [
     grossYieldEstimate: 5.1,
     agentId: 'a2',
     featured: true,
-    thumbColor: 'from-brass to-stone-dark',
+    images: [
+      { src: '/images/library/villa-landscaped.jpg', room: 'exterior' },
+      { src: '/images/library/living-lounge.jpg', room: 'living' },
+      { src: '/images/library/kitchen-contemporary.jpg', room: 'kitchen' },
+      { src: '/images/library/bedroom-warm.jpg', room: 'bedroom' },
+      { src: '/images/library/bathroom-mirror.jpg', room: 'bathroom' },
+      { src: '/images/library/pool-deck.jpg', room: 'pool' },
+    ],
   },
   {
     id: 'p6',
@@ -158,7 +191,13 @@ export const properties: Property[] = [
     ],
     grossYieldEstimate: 6.7,
     agentId: 'a3',
-    thumbColor: 'from-steel to-emerald-800',
+    images: [
+      { src: '/images/library/living-styled.jpg', room: 'living' },
+      { src: '/images/library/kitchen-fitted.jpg', room: 'kitchen' },
+      { src: '/images/library/bedroom-wood.jpg', room: 'bedroom' },
+      { src: '/images/library/bathroom-modern.jpg', room: 'bathroom' },
+      { src: '/images/library/view-sea.jpg', room: 'view' },
+    ],
   },
   {
     id: 'p7',
@@ -181,7 +220,14 @@ export const properties: Property[] = [
     highlights: ['Full sea-facing terrace', 'Near Louvre Abu Dhabi', 'Duplex layout'],
     grossYieldEstimate: 4.6,
     agentId: 'a2',
-    thumbColor: 'from-ink to-steel-dark',
+    images: [
+      { src: '/images/library/view-sea.jpg', room: 'view' },
+      { src: '/images/library/living-sunlit.jpg', room: 'living' },
+      { src: '/images/library/kitchen-island.jpg', room: 'kitchen' },
+      { src: '/images/library/bedroom-suite.jpg', room: 'bedroom' },
+      { src: '/images/library/bathroom-vanity.jpg', room: 'bathroom' },
+      { src: '/images/library/terrace-outdoor.jpg', room: 'terrace' },
+    ],
   },
   {
     id: 'p8',
@@ -208,7 +254,13 @@ export const properties: Property[] = [
     ],
     grossYieldEstimate: 7.1,
     agentId: 'a1',
-    thumbColor: 'from-brass-light to-steel',
+    images: [
+      { src: '/images/library/living-coffee.jpg', room: 'living' },
+      { src: '/images/library/kitchen-contemporary.jpg', room: 'kitchen' },
+      { src: '/images/library/bedroom-cozy.jpg', room: 'bedroom' },
+      { src: '/images/library/bathroom-clean.jpg', room: 'bathroom' },
+      { src: '/images/library/pool-deck.jpg', room: 'pool' },
+    ],
   },
 ]
 

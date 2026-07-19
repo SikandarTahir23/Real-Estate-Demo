@@ -7,7 +7,7 @@ import { CalculatorView } from './CalculatorView'
 export const metadata: Metadata = {
   title: 'Mortgage & ROI Calculator',
   description:
-    'Estimate monthly mortgage payments and gross rental yield for UAE property. Illustrative estimates, not live bank rates.',
+    'Estimate monthly mortgage payments and gross rental yield for UAE property. Estimates for guidance, not live bank rates.',
 }
 
 // Fallback price when the calculator is opened standalone (no ?price=). A mid-market

@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { useFormatter, useTranslations } from 'next-intl'
 import type { MatchResult } from '@/types'
@@ -37,10 +38,15 @@ export function MatchResultCard({ result, index }: MatchResultCardProps) {
         href={`/listings/${property.slug}`}
         className="flex gap-4 rounded-xl bg-white p-3 ring-1 ring-stone-dark transition-transform duration-150 hover:scale-[1.01] motion-reduce:transition-none"
       >
-        <div
-          aria-hidden="true"
-          className={`h-24 w-28 shrink-0 rounded-lg bg-gradient-to-br ${property.thumbColor}`}
-        />
+        <div className="relative h-24 w-28 shrink-0 overflow-hidden rounded-lg bg-stone">
+          <Image
+            src={property.images[0].src}
+            alt={tMatcher('imageAlt', { title: property.title })}
+            fill
+            sizes="112px"
+            className="object-cover"
+          />
+        </div>
         <div className="flex min-w-0 flex-1 flex-col gap-1">
           <div className="flex items-center gap-2">
             <StatusTag status={property.status} />

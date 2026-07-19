@@ -5,6 +5,23 @@ export type PropertyType = 'Apartment' | 'Villa' | 'Townhouse' | 'Penthouse'
 export type PropertyStatus = 'Ready' | 'OffPlan'
 export type PropertyPurpose = 'Buy' | 'Rent'
 
+// Room/scene category for a gallery image — drives the localized caption and the
+// accessible alt text (see detail.gallery.views in the message catalogues).
+export type GalleryRoom =
+  | 'exterior'
+  | 'living'
+  | 'kitchen'
+  | 'bedroom'
+  | 'bathroom'
+  | 'view'
+  | 'pool'
+  | 'terrace'
+
+export interface PropertyImage {
+  src: string // path under /public, e.g. /images/library/living-skyline.jpg
+  room: GalleryRoom
+}
+
 export interface Property {
   id: string
   slug: string
@@ -14,7 +31,7 @@ export interface Property {
   status: PropertyStatus
   area: string // e.g. 'Downtown Dubai', 'Yas Island'
   emirate: 'Dubai' | 'Abu Dhabi'
-  developer: string // fictional — see §10
+  developer: string
   priceAED: number
   sizeSqft: number
   beds: number
@@ -27,7 +44,9 @@ export interface Property {
   grossYieldEstimate?: number // percent, investor-facing content
   agentId: string
   featured?: boolean
-  thumbColor: string // gradient class, decorative placeholder (§9)
+  // Ordered gallery for the card thumbnail (images[0]) and the detail-page gallery.
+  // Each entry is a locally-hosted, optimized photograph served through next/image.
+  images: PropertyImage[]
 }
 
 export interface Agent {
@@ -42,7 +61,7 @@ export interface Agent {
 
 export interface Testimonial {
   id: string
-  clientInitials: string // initials only — see §10 disclosure rules
+  clientInitials: string // initials only, for client privacy
   clientOrigin: string
   rating: number
   quote: string

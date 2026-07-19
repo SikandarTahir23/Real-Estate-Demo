@@ -1,5 +1,5 @@
 // Pure mortgage & ROI math (spec §6). No API calls, no state — fully deterministic and
-// unit-testable. Rates are illustrative, not live bank rates (§14 item 9): every UI
+// unit-testable. Rates are for guidance, not live bank rates (§14 item 9): every UI
 // output built on these is labelled "Estimate".
 //
 // The three exported functions below are verbatim from §6. The derived helpers beneath

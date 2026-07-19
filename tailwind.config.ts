@@ -1,9 +1,8 @@
 import type { Config } from 'tailwindcss'
 
 // "Blueprint & Brass" design system — tokens are the single source of truth (spec §1).
-// Colors are EXTENDED (not replaced) so Tailwind defaults such as `slate-800`,
-// `emerald-800`, and `stone` scale steps used by the property `thumbColor` gradients
-// in §4 remain available alongside these named tokens.
+// Colors are EXTENDED (not replaced) so Tailwind default scale steps remain
+// available alongside these named tokens.
 const config: Config = {
   content: [
     './app/**/*.{ts,tsx}',

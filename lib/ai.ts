@@ -1,14 +1,16 @@
 // Reusable server-side AI client for all chat/reply generation.
 //
-// Default provider is xAI's Grok, which exposes an OpenAI-compatible
-// /chat/completions endpoint — so this single client speaks that format and the
+// The client speaks the OpenAI-compatible /chat/completions format, so the
 // provider is swappable purely through environment variables (no code change to
-// point at OpenAI, Together, Groq-the-inference-host, a local proxy, etc.):
+// point at Google Gemini, xAI Grok, OpenAI, Together, a local proxy, etc.):
 //
-//   AI_API_KEY        preferred generic key; falls back to GROK_API_KEY
-//   AI_BASE_URL       default https://api.x.ai/v1
-//   AI_MODEL          default grok-2-latest
-//   AI_PROVIDER       label only, for diagnostics (default "grok")
+//   AI_API_KEY          preferred generic key; falls back to GROK_API_KEY
+//   AI_BASE_URL         default https://api.x.ai/v1
+//   AI_MODEL            default grok-3
+//   AI_PROVIDER         label only, for diagnostics (default "grok")
+//   AI_REASONING_EFFORT optional; for "thinking" models (e.g. Gemini 2.5) set to
+//                       "none" so hidden reasoning doesn't consume the token
+//                       budget and leave an empty reply. Sent as reasoning_effort.
 //
 // Secrets are read from the environment at call time and never hardcoded. This
 // module is server-only: it must never be imported into a Client Component (the
@@ -177,6 +179,12 @@ export async function chatCompletionRaw(
     temperature: options.temperature ?? 0.7,
   }
   if (options.maxTokens) body.max_tokens = options.maxTokens
+  // Thinking models (e.g. Gemini 2.5) spend the token budget on hidden reasoning
+  // first, which can leave an empty reply under a tight max_tokens. When set, this
+  // caps or disables that. "none" fully disables thinking; the field is silently
+  // ignored by providers that don't support it, so it's safe to always forward.
+  const reasoningEffort = process.env.AI_REASONING_EFFORT?.trim()
+  if (reasoningEffort) body.reasoning_effort = reasoningEffort
   if (options.tools?.length) {
     body.tools = options.tools
     body.tool_choice = options.toolChoice ?? 'auto'
@@ -318,7 +326,8 @@ export async function verifyConnection(): Promise<VerifyResult> {
         { role: 'system', content: 'Reply with exactly the word: pong.' },
         { role: 'user', content: 'ping' },
       ],
-      { temperature: 0, maxTokens: 5 },
+      // Small but not tiny: thinking models need a little headroom even for "pong".
+      { temperature: 0, maxTokens: 32 },
     )
     return {
       ok: true,

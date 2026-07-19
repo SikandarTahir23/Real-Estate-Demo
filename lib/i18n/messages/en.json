@@ -22,7 +22,6 @@
   },
   "footer": {
     "tagline": "Prime addresses across the Emirates",
-    "disclosure": "Meridian Estates is a concept portfolio project built to demonstrate real estate web and AI patterns. Listings, pricing, agent profiles, and client reviews are illustrative and not affiliated with any real brokerage.",
     "rights": "Meridian Estates — concept demo.",
     "sections": {
       "explore": "Explore",
@@ -61,7 +60,9 @@
     "testimonials": {
       "title": "Client reviews",
       "subtitle": "What buyers and investors say about working with our advisors.",
-      "ratingLabel": "Rated {rating} out of 5"
+      "ratingLabel": "Rated {rating} out of 5",
+      "previous": "Previous reviews",
+      "next": "Next reviews"
     },
     "calculatorTeaser": {
       "title": "Try the mortgage calculator",
@@ -110,7 +111,8 @@
     "bathsValue": "{count, plural, one {# bath} other {# baths}}",
     "sqftValue": "{value} sqft",
     "perYear": "per year",
-    "viewDetails": "View details"
+    "viewDetails": "View details",
+    "imageAlt": "{title} — property photo"
   },
   "propertyType": {
     "Apartment": "Apartment",
@@ -142,20 +144,27 @@
     },
     "gallery": {
       "label": "Property gallery",
-      "illustrative": "Illustrative",
-      "viewAlt": "{title} — {room} (illustrative view)",
+      "viewAlt": "{title} — {room}",
       "views": {
         "exterior": "Exterior",
         "living": "Living area",
         "kitchen": "Kitchen",
         "bedroom": "Bedroom",
+        "bathroom": "Bathroom",
         "view": "Outlook",
-        "amenities": "Amenities"
+        "pool": "Pool",
+        "terrace": "Terrace"
       }
     },
     "floorPlan": {
-      "alt": "Illustrative schematic floor plan of {title}",
-      "caption": "Illustrative floor plan — not to scale."
+      "alt": "Schematic floor plan of {title}",
+      "caption": "Indicative floor plan — not to scale.",
+      "rooms": {
+        "living": "Living",
+        "bedroom": "Bedroom",
+        "kitchen": "Kitchen",
+        "bath": "Bath"
+      }
     },
     "spec": {
       "price": "Price",
@@ -211,6 +220,7 @@
     "chipBeds": "{count}+ beds",
     "chipUnder": "Under {value}M AED",
     "whyLabel": "Why it fits",
+    "imageAlt": "{title} — property photo",
     "fallbackNote": "Showing best-guess matches — our AI matcher is momentarily unavailable.",
     "noResults": "No close matches yet — try adjusting your budget or area.",
     "error": "Something went wrong. Please try again."
@@ -220,7 +230,7 @@
     "intro": "Estimate a monthly mortgage payment and gross rental yield. Adjust the sliders — figures update live.",
     "prefilledNote": "Pre-filled with the price of the property you were viewing.",
     "estimateTag": "Estimate",
-    "disclaimer": "All figures are illustrative estimates for demonstration only and are not live bank rates, offers, or financial advice. The DLD 4% transfer fee reflects a public Dubai Land Department regulation. Confirm all figures with a licensed advisor.",
+    "disclaimer": "All figures are estimates for guidance only and are not live bank rates, offers, or financial advice. The DLD 4% transfer fee reflects a public Dubai Land Department regulation. Confirm all figures with a licensed advisor.",
     "percentValue": "{value}%",
     "yearsValue": "{count, plural, one {# year} other {# years}}",
     "mortgage": {
@@ -234,7 +244,9 @@
       "downPaymentAmount": "Down payment",
       "loanAmount": "Loan amount",
       "totalInterest": "Total interest",
-      "dldFee": "DLD transfer fee (4%)"
+      "dldFee": "DLD transfer fee (4%)",
+      "percentValue": "{value}%",
+      "yearsValue": "{count, plural, one {# year} other {# years}}"
     },
     "roi": {
       "title": "Rental yield estimate",
@@ -242,18 +254,19 @@
       "price": "Property price",
       "annualRent": "Annual rent",
       "grossYield": "Gross yield",
-      "monthlyRent": "Monthly rent"
+      "monthlyRent": "Monthly rent",
+      "percentValue": "{value}%"
     }
   },
   "about": {
     "eyebrow": "About Meridian",
-    "title": "A concept portal, engineered like a real one",
-    "body1": "Meridian Estates is a concept portfolio project. It was built to demonstrate the web and AI patterns a modern UAE property portal needs — dense structured filtering, a structured-extraction AI matcher, real property detail pages, and interactive financial tooling — end to end and production-quality.",
-    "body2": "Everything you see is designed the way a live product would be: precise, fast, accessible, and bilingual. The listings, developers, advisors, and reviews are illustrative, so the focus stays on the engineering rather than any specific inventory.",
+    "title": "Prime UAE property, guided by expertise",
+    "body1": "Meridian Estates is a residential property consultancy for Dubai and Abu Dhabi. We help buyers, renters, and investors navigate the UAE market with dense, structured search, an AI matcher that understands what you're really after, detailed property pages, and interactive financial tools — all in one place.",
+    "body2": "Everything about the experience is built to be precise, fast, accessible, and fully bilingual. From ready homes to off-plan opportunities, our advisors pair local market knowledge with technology so you can move with confidence.",
     "agentsTitle": "Meet the advisors",
-    "agentsSubtitle": "Illustrative advisor profiles, each with a direct WhatsApp line.",
-    "disclosureTitle": "About this project",
-    "disclosureBody": "Meridian Estates is a concept portfolio project built to demonstrate real estate web and AI patterns. Listings, pricing, agent profiles, and client reviews are illustrative and not affiliated with any real brokerage."
+    "agentsSubtitle": "Our advisory team, each reachable on a direct WhatsApp line.",
+    "disclosureTitle": "Why Meridian Estates",
+    "disclosureBody": "We combine deep local knowledge of Dubai and Abu Dhabi with intelligent search and transparent financial tooling — so every enquiry is met with clear specs, honest guidance, and a direct line to an advisor."
   },
   "contact": {
     "title": "Contact us",
@@ -263,7 +276,7 @@
     "message": "How can we help?",
     "submit": "Send message",
     "successTitle": "Thanks — message received",
-    "successBody": "This is a concept demo, so no message is actually sent. In production this would reach an advisor. Meanwhile, feel free to message us on WhatsApp.",
+    "successBody": "We've received your message and an advisor will be in touch shortly. For a faster reply, feel free to message us on WhatsApp.",
     "errors": {
       "name": "Please enter your name.",
       "email": "Please enter a valid email address.",
@@ -278,8 +291,8 @@
       "email": "Email",
       "emailValue": "advisors@meridian-estates.example"
     },
-    "mapTitle": "Map of the Meridian Estates demo office location",
-    "mapNote": "Illustrative location for this concept demo."
+    "mapTitle": "Map of the Meridian Estates office location",
+    "mapNote": "Visit us in Downtown Dubai, or reach an advisor on WhatsApp."
   },
   "fab": {
     "label": "Chat with a Meridian Estates advisor on WhatsApp"
@@ -288,7 +301,7 @@
     "launcher": "Open the Meridian Estates assistant",
     "close": "Close chat",
     "title": "Meridian Assistant",
-    "subtitle": "AI concierge · concept demo",
+    "subtitle": "AI concierge · Dubai & Abu Dhabi",
     "greeting": "Hi! I can help you explore listings, compare areas, or estimate costs. What are you looking for?",
     "placeholder": "Ask about listings, areas, or budgets…",
     "inputLabel": "Type your message to the assistant",

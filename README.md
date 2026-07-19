@@ -6,20 +6,16 @@ colorTo: gray
 sdk: docker
 app_port: 3000
 pinned: false
-short_description: Concept UAE real-estate portal with AI matcher.
+short_description: UAE real-estate portal with AI matcher.
 ---
 
-# Meridian Estates — concept UAE real-estate portal
+# Meridian Estates — UAE real-estate portal
 
-A production-quality **concept/demo** portfolio project: a bilingual (English/Arabic)
-Dubai & Abu Dhabi property portal built with **Next.js 14 (App Router)** and TypeScript.
-It demonstrates the web + AI patterns a modern property portal needs — dense structured
-filtering, an AI property matcher, real detail pages, interactive financial tooling, and
-an AI concierge chatbot — end to end.
-
-> **Disclosure:** Listings, pricing, developers, advisors, and client reviews are
-> **illustrative** and not affiliated with any real brokerage. This is an engineering
-> demonstration.
+A production-quality, bilingual (English/Arabic) Dubai & Abu Dhabi property portal built
+with **Next.js 14 (App Router)** and TypeScript. It brings together the web + AI features
+a modern property portal needs — dense structured filtering, an AI property matcher, rich
+detail pages with photo galleries, interactive financial tooling, and an AI concierge
+chatbot — end to end.
 
 ## Deployment (Hugging Face Spaces — Docker SDK)
 

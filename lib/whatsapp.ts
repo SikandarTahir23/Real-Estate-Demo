@@ -2,8 +2,8 @@
 // site — the number is never hardcoded into a component; it comes from
 // NEXT_PUBLIC_WHATSAPP_NUMBER, and the message is always encodeURIComponent-ed.
 //
-// The demo number ships in .env.local (valid UAE mobile format), documented in
-// .env.example. wa.me requires the number in international format with no '+', spaces,
+// The advisor number is provided via .env.local (valid UAE mobile format), documented
+// in .env.example. wa.me requires the number in international format with no '+', spaces,
 // or dashes, so we strip non-digits defensively before building the URL.
 export function buildWhatsAppLink(message: string): string {
   const raw = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? ''

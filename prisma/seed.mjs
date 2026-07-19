@@ -1,4 +1,4 @@
-// Seed Neon with the concept catalogue from lib/*.ts — 8 properties, 3 agents,
+// Seed Neon with the catalogue from lib/*.ts — 8 properties, 3 agents,
 // 3 testimonials. Idempotent: every row is upserted by its stable id (p*/a*/t*),
 // so running this repeatedly converges rather than duplicating.
 //
@@ -63,7 +63,14 @@ const properties = [
     highlights: ['Fountain view balcony', 'Vacant on transfer', 'Chiller-free'],
     grossYieldEstimate: 6.2,
     featured: true,
-    thumbColor: 'from-slate-800 to-steel-dark',
+    images: [
+      { src: '/images/library/tower-dusk.jpg', room: 'exterior' },
+      { src: '/images/library/living-skyline.jpg', room: 'living' },
+      { src: '/images/library/kitchen-sleek.jpg', room: 'kitchen' },
+      { src: '/images/library/bedroom-white.jpg', room: 'bedroom' },
+      { src: '/images/library/view-city-skyline.jpg', room: 'view' },
+      { src: '/images/library/bathroom-vanity.jpg', room: 'bathroom' },
+    ],
   },
   {
     id: 'p2',
@@ -91,7 +98,14 @@ const properties = [
     ],
     grossYieldEstimate: 4.1,
     featured: true,
-    thumbColor: 'from-brass-dark to-brass',
+    images: [
+      { src: '/images/library/villa-pool-exterior.jpg', room: 'exterior' },
+      { src: '/images/library/living-warm.jpg', room: 'living' },
+      { src: '/images/library/kitchen-island.jpg', room: 'kitchen' },
+      { src: '/images/library/bedroom-suite.jpg', room: 'bedroom' },
+      { src: '/images/library/pool-deck.jpg', room: 'pool' },
+      { src: '/images/library/view-sea.jpg', room: 'view' },
+    ],
   },
   {
     id: 'p3',
@@ -119,7 +133,14 @@ const properties = [
     ],
     grossYieldEstimate: 5.8,
     featured: false,
-    thumbColor: 'from-emerald-800 to-steel',
+    images: [
+      { src: '/images/library/house-facade.jpg', room: 'exterior' },
+      { src: '/images/library/living-open.jpg', room: 'living' },
+      { src: '/images/library/kitchen-fitted.jpg', room: 'kitchen' },
+      { src: '/images/library/bedroom-styled.jpg', room: 'bedroom' },
+      { src: '/images/library/bathroom-modern.jpg', room: 'bathroom' },
+      { src: '/images/library/terrace-outdoor.jpg', room: 'terrace' },
+    ],
   },
   {
     id: 'p4',
@@ -143,7 +164,12 @@ const properties = [
     highlights: ['Furnished option available', 'Metro-adjacent', 'Chiller-free'],
     grossYieldEstimate: null,
     featured: false,
-    thumbColor: 'from-steel-dark to-ink',
+    images: [
+      { src: '/images/library/living-bright.jpg', room: 'living' },
+      { src: '/images/library/kitchen-pendant.jpg', room: 'kitchen' },
+      { src: '/images/library/bathroom-clean.jpg', room: 'bathroom' },
+      { src: '/images/library/view-city-skyline.jpg', room: 'view' },
+    ],
   },
   {
     id: 'p5',
@@ -176,7 +202,14 @@ const properties = [
     ],
     grossYieldEstimate: 5.1,
     featured: true,
-    thumbColor: 'from-brass to-stone-dark',
+    images: [
+      { src: '/images/library/villa-landscaped.jpg', room: 'exterior' },
+      { src: '/images/library/living-lounge.jpg', room: 'living' },
+      { src: '/images/library/kitchen-contemporary.jpg', room: 'kitchen' },
+      { src: '/images/library/bedroom-warm.jpg', room: 'bedroom' },
+      { src: '/images/library/bathroom-mirror.jpg', room: 'bathroom' },
+      { src: '/images/library/pool-deck.jpg', room: 'pool' },
+    ],
   },
   {
     id: 'p6',
@@ -204,7 +237,13 @@ const properties = [
     ],
     grossYieldEstimate: 6.7,
     featured: false,
-    thumbColor: 'from-steel to-emerald-800',
+    images: [
+      { src: '/images/library/living-styled.jpg', room: 'living' },
+      { src: '/images/library/kitchen-fitted.jpg', room: 'kitchen' },
+      { src: '/images/library/bedroom-wood.jpg', room: 'bedroom' },
+      { src: '/images/library/bathroom-modern.jpg', room: 'bathroom' },
+      { src: '/images/library/view-sea.jpg', room: 'view' },
+    ],
   },
   {
     id: 'p7',
@@ -236,7 +275,14 @@ const properties = [
     ],
     grossYieldEstimate: 4.6,
     featured: false,
-    thumbColor: 'from-ink to-steel-dark',
+    images: [
+      { src: '/images/library/view-sea.jpg', room: 'view' },
+      { src: '/images/library/living-sunlit.jpg', room: 'living' },
+      { src: '/images/library/kitchen-island.jpg', room: 'kitchen' },
+      { src: '/images/library/bedroom-suite.jpg', room: 'bedroom' },
+      { src: '/images/library/bathroom-vanity.jpg', room: 'bathroom' },
+      { src: '/images/library/terrace-outdoor.jpg', room: 'terrace' },
+    ],
   },
   {
     id: 'p8',
@@ -264,7 +310,13 @@ const properties = [
     ],
     grossYieldEstimate: 7.1,
     featured: false,
-    thumbColor: 'from-brass-light to-steel',
+    images: [
+      { src: '/images/library/living-coffee.jpg', room: 'living' },
+      { src: '/images/library/kitchen-contemporary.jpg', room: 'kitchen' },
+      { src: '/images/library/bedroom-cozy.jpg', room: 'bedroom' },
+      { src: '/images/library/bathroom-clean.jpg', room: 'bathroom' },
+      { src: '/images/library/pool-deck.jpg', room: 'pool' },
+    ],
   },
 ]
 

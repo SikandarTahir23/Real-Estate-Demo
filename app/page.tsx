@@ -12,16 +12,13 @@ import { testimonials } from '@/lib/testimonials'
 // and the "Try the Mortgage Calculator" teaser.
 export default function HomePage() {
   const featured = getFeaturedProperties()
-  // §7 calls for "one Testimonial" on the landing page; the section itself is
-  // count-flexible so it can be reused elsewhere.
-  const homeTestimonials = testimonials.slice(0, 1)
 
   return (
     <>
       <HeroSection />
       <FeaturedSection properties={featured} />
       <TrustBand />
-      <TestimonialsSection testimonials={homeTestimonials} />
+      <TestimonialsSection testimonials={testimonials} />
       <CalculatorTeaser />
     </>
   )

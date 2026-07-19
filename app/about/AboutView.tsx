@@ -8,8 +8,8 @@ interface AboutViewProps {
   agents: Agent[]
 }
 
-// About page view (spec §7): story, the three agent profiles, and the mandatory
-// disclosure block (§10). Reuses AgentCard from the detail page (composition over
+// About page view (spec §7): company story, the three advisor profiles, and a
+// "why Meridian" block. Reuses AgentCard from the detail page (composition over
 // duplication) — each renders with the general advisor WhatsApp message by default.
 export function AboutView({ agents }: AboutViewProps) {
   const t = useTranslations('about')
@@ -48,9 +48,8 @@ export function AboutView({ agents }: AboutViewProps) {
         </ul>
       </section>
 
-      {/* Mandatory disclosure block (§10). Rendered in ink-mid on the light page — well
-          above the AA floor — and given prominence rather than buried, per §10's intent
-          that the concept nature be stated plainly and first. */}
+      {/* "Why Meridian" value statement. Rendered in ink-mid on the light page —
+          well above the AA contrast floor. */}
       <section
         aria-labelledby="disclosure-heading"
         className="mt-14 rounded-xl border border-stone-dark bg-white p-6"

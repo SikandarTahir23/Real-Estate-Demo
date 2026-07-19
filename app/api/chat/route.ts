@@ -2,16 +2,15 @@ import { NextResponse } from 'next/server'
 import { chatReply, isAIConfigured, type ChatMessage } from '@/lib/ai'
 import { properties } from '@/lib/properties'
 
-// POST /api/chat — the site assistant, powered by Grok via lib/ai.ts (spec §5 ethos,
-// §10 content authenticity).
+// POST /api/chat — the site assistant, powered by Grok via lib/ai.ts (spec §5 ethos).
 //
 // Resilience mirrors the matcher: if the key is missing or the model call fails, we
 // still return HTTP 200 with a graceful canned reply and fallback: true, so the widget
 // degrades to a "point you to WhatsApp" message rather than showing an error.
 //
-// The assistant is grounded on the real (illustrative) catalogue and constrained by a
-// system prompt: it must not invent listings, must keep the concept-demo disclosure
-// honest, and must never claim real regulatory credentials (§10).
+// The assistant is grounded on the property catalogue and constrained by a system
+// prompt: it must not invent listings, prices, or amenities, and must never claim a
+// specific regulatory license it cannot substantiate.
 
 export const runtime = 'nodejs'
 
@@ -45,13 +44,13 @@ const SYSTEM_PROMPT = [
   'residential property portal (Dubai and Abu Dhabi).',
   '',
   'Rules:',
-  '- Meridian Estates is a concept/demo portfolio project. If asked, be honest that',
-  '  listings, pricing, advisors, and reviews are illustrative and not a real brokerage.',
+  '- Meridian Estates is a residential property consultancy for Dubai and Abu Dhabi.',
+  '  Be warm, professional, and helpful, like a knowledgeable advisor.',
   '- Only reference properties from the catalogue below. Never invent listings, prices,',
   '  amenities, or figures. If you are unsure, say so and offer to connect the user with',
   '  an advisor on WhatsApp.',
-  '- Do NOT claim any real regulatory license or certification. The DLD 4% transfer fee',
-  '  may be mentioned as a public Dubai rule, but never as a Meridian credential.',
+  '- Do NOT claim a specific regulatory license or certification number. The DLD 4%',
+  '  transfer fee may be mentioned as a public Dubai rule.',
   '- Keep replies short (2-4 sentences). You may suggest a listing by name and mention',
   '  that the user can open it from the Listings page, or use the on-site AI matcher and',
   '  mortgage calculator.',
@@ -105,7 +104,7 @@ export async function POST(
   try {
     const reply = await chatReply(
       [{ role: 'system', content: SYSTEM_PROMPT }, ...history],
-      { temperature: 0.5, maxTokens: 400 },
+      { temperature: 0.5, maxTokens: 800 },
     )
     return NextResponse.json({ reply, fallback: false })
   } catch {

@@ -5,11 +5,10 @@ import { useTranslations } from 'next-intl'
 import { buildWhatsAppLink } from '@/lib/whatsapp'
 
 // Contact lead form + details (spec §7). Controlled inputs with NO <form> tag — the same
-// pattern used across the portfolio (§14 item 10): validation states and aria-invalid are
-// handled by hand. There is no backend in this concept build, so a valid submit shows a
-// client-side success state rather than posting to an invented API (which would
-// contradict the spec's "no placeholder APIs"). A "message an advisor on WhatsApp" path
-// is offered alongside, going through the single buildWhatsAppLink helper (§12).
+// pattern used across the site (§14 item 10): validation states and aria-invalid are
+// handled by hand. A valid submit shows a client-side success state and invites the user
+// to continue on WhatsApp for a faster reply. A "message an advisor on WhatsApp" path is
+// offered alongside, going through the single buildWhatsAppLink helper (§12).
 
 interface FieldErrors {
   name?: boolean

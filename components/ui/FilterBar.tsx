@@ -9,10 +9,10 @@ import type {
   PropertyType,
 } from '@/types'
 
-// Client-side filtering model (spec §7, §14 item 2: client-side is appropriate at
-// 8-listing demo scale — documented limitation, not an oversight). Every field uses
-// 'all' as the unset sentinel so the controlled <select> values stay strings and the
-// default view is fully unfiltered.
+// Client-side filtering model (spec §7, §14 item 2: client-side is appropriate at the
+// current catalogue size — a documented scaling boundary). Every field uses 'all' as
+// the unset sentinel so the controlled <select> values stay strings and the default
+// view is fully unfiltered.
 export interface PropertyFilters {
   type: PropertyType | 'all'
   area: string | 'all'
@@ -33,7 +33,7 @@ export const defaultFilters: PropertyFilters = {
 
 // Price brackets in AED. Bounds are inclusive-min / exclusive-max; `max: null` means
 // open-ended. A bracket dropdown keeps §7's "Price range" a single control rather than
-// a dual-thumb slider, which would be overkill at demo scale.
+// a dual-thumb slider, which would be overkill here.
 type PriceBracketId = 'lt1m' | '1to3m' | '3to6m' | '6to10m' | 'gte10m'
 
 interface PriceBracket {

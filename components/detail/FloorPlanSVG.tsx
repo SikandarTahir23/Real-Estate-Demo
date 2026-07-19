@@ -6,13 +6,13 @@ interface FloorPlanSVGProps {
   title: string
 }
 
-// Schematic floor-plan placeholder (§9). Unlike the gallery, this placeholder is meant
-// to read as a technical line drawing — so the illustrative approach fits the content
-// type honestly and ties back to the "Blueprint & Brass" concept (§1). Steel/ink
-// strokes with faint dimension marks and a crosshair reticle, on a stone ground.
+// Schematic floor plan rendered as a labelled line drawing — the same visual language
+// a real listing's floor plan uses, and a natural fit for the "Blueprint & Brass"
+// identity (§1). Steel/ink strokes with dimension marks and room labels on a stone
+// ground.
 //
 // Accessibility: role="img" + a <title> referenced by aria-labelledby so screen
-// readers announce it as an illustrative floor plan naming the property (§13).
+// readers announce it as a floor plan naming the property (§13).
 export function FloorPlanSVG({ title }: FloorPlanSVGProps) {
   const t = useTranslations('detail.floorPlan')
   const titleId = 'floorplan-title'
@@ -60,6 +60,19 @@ export function FloorPlanSVG({ title }: FloorPlanSVGProps) {
         {/* Door swings */}
         <path d="M120 150 A20 20 0 0 1 140 170" fill="none" stroke="#5B7A94" strokeWidth="1" />
         <path d="M200 90 A18 18 0 0 0 218 108" fill="none" stroke="#5B7A94" strokeWidth="1" />
+
+        {/* Room labels */}
+        <g
+          fill="#3E5A70"
+          fontSize="9"
+          fontFamily="'IBM Plex Mono', monospace"
+          textAnchor="middle"
+        >
+          <text x="120" y="95">{t('rooms.living')}</text>
+          <text x="120" y="188">{t('rooms.bedroom')}</text>
+          <text x="280" y="88">{t('rooms.kitchen')}</text>
+          <text x="280" y="180">{t('rooms.bath')}</text>
+        </g>
 
         {/* Dimension marks (top) */}
         <line x1="40" y1="28" x2="360" y2="28" stroke="#7C5A2A" strokeWidth="0.75" />

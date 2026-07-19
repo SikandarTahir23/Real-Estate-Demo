@@ -12,7 +12,7 @@ interface PageProps {
   params: { slug: string }
 }
 
-// Pre-render every listing at build time (§14 item 2: static, demo-scale). A slug that
+// Pre-render every listing at build time (§14 item 2: static generation). A slug that
 // isn't in the static set 404s via notFound().
 export function generateStaticParams() {
   return properties.map((property) => ({ slug: property.slug }))

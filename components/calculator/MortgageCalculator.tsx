@@ -19,7 +19,7 @@ interface MortgageCalculatorProps {
 }
 
 // Sensible UAE-oriented defaults; 20% is the common minimum down payment for a first
-// residential purchase, 4.25% a plausible illustrative rate, 25-year tenure.
+// residential purchase, 4.25% a representative rate, 25-year tenure.
 const DEFAULTS = { downPaymentPct: 20, annualRatePct: 4.25, tenureYears: 25 }
 
 const PRICE = { min: 300_000, max: 30_000_000, step: 50_000 }

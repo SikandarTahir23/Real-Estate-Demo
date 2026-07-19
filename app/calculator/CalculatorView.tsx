@@ -40,7 +40,7 @@ export function CalculatorView({ initialPrice, prefilled }: CalculatorViewProps)
       </div>
 
       {/* Standing estimate disclaimer — reinforces the per-figure "Estimate" tags
-          (§6, §14 item 9). Illustrative, never presented as live bank rates. */}
+          (§6, §14 item 9). Estimates for guidance, never presented as live bank rates. */}
       <p className="mt-8 text-xs leading-relaxed text-ink-light">
         {t('disclaimer')}
       </p>

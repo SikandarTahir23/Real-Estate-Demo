@@ -72,18 +72,6 @@ export function Footer() {
           © 2026 · {tFooter('rights')}
         </p>
       </div>
-
-      {/* Mandatory concept disclosure on every page (§10). §1.1 validated ink-light
-          as the disclosure color ON STONE (5.07:1, AA pass) — so it renders on a
-          light stone band, not the dark surface above where it would fail contrast.
-          A disclosure that fails AA is worse than none (§10). */}
-      <div className="border-t border-stone-dark bg-stone">
-        <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
-          <p className="max-w-4xl text-xs leading-relaxed text-ink-light">
-            {tFooter('disclosure')}
-          </p>
-        </div>
-      </div>
     </footer>
   )
 }

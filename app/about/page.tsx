@@ -7,7 +7,7 @@ import { AboutView } from './AboutView'
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Meridian Estates is a concept portfolio project demonstrating real estate web and AI patterns. Meet the advisors and read the disclosure.',
+    'Meridian Estates is a residential property consultancy for Dubai and Abu Dhabi. Meet our advisors and learn how we help you buy, rent, and invest.',
 }
 
 export default function AboutPage() {

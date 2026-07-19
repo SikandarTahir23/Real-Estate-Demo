@@ -9,11 +9,10 @@ interface ViewingRequestProps {
 }
 
 // Primary CTA: "Request a Viewing" → WhatsApp deep link pre-filled with the property
-// title and an optional preferred date (§9). Deliberately NOT a booking calendar —
-// that capability is reserved for the next portfolio project (§14 item 14); a simple
-// preferred-date text field feeding the message is enough here.
+// title and an optional preferred date (§9). Deliberately NOT a booking calendar
+// (§14 item 14); a simple preferred-date text field feeding the message is enough here.
 //
-// Controlled input, no <form> tag — the same pattern used across the portfolio
+// Controlled input, no <form> tag — the same pattern used across the site
 // (§14 item 10). The date is optional; the link works with or without it.
 export function ViewingRequest({ propertyTitle }: ViewingRequestProps) {
   const t = useTranslations('detail.viewing')

@@ -54,8 +54,8 @@ export function OutputStat({
         <div
           aria-hidden="true"
           className={cn(
-            'mt-2 h-7 w-32 animate-pulse rounded motion-reduce:animate-none',
-            primary ? 'bg-white/20' : 'bg-stone-dark',
+            'mt-1 w-32 animate-pulse rounded motion-reduce:animate-none',
+            primary ? 'h-8 bg-white/20' : 'h-7 bg-stone-dark',
           )}
         />
       ) : (

@@ -32,8 +32,11 @@ export function PropertyDetailView({
   // grounded strictly in this property's real title — never invented details.
   const agentMessage = t('agent.propertyMessage', { title: property.title })
 
-  // Calculator shortcut pre-filled with thi
+  // Calculator shortcut pre-filled with this property's price (§6, §9) so the sliders
   
+  // start from a real figure rather than the standalone default.
+  const calculatorHref = `/calculator?price=${property.priceAED}`
+
   return (
     <article className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
       {/* Breadcrumb + back link */}
@@ -67,7 +70,7 @@ export function PropertyDetailView({
       {/* Two-column: media + content on the left, sticky actions on the right */}
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
         <div className="space-y-10 lg:col-span-2">
-          <PropertyGallery title={property.title} thumbColor={property.thumbColor} />
+          <PropertyGallery title={property.title} images={property.images} />
 
           {/* Specs */}
           <section aria-labelledby="specs-heading" className="space-y-4">
@@ -139,7 +142,7 @@ export function PropertyDetailView({
             </section>
           )}
 
-          {/* Floor plan — the honestly-schematic placeholder (§9) */}
+          {/* Floor plan — schematic line drawing (§9) */}
           <section aria-labelledby="floorplan-heading" className="space-y-3">
             <h2
               id="floorplan-heading"

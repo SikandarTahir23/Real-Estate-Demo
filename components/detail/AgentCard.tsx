@@ -12,9 +12,9 @@ interface AgentCardProps {
   whatsappMessage?: string
 }
 
-// Agent card (§9): color-block + initials (same illustrative pattern as the gallery —
-// no photography, §14 item 5), name, years of experience, languages, and a direct
-// WhatsApp button. Reusable — the About page (§7, Phase 6) renders three of these.
+// Agent card (§9): a monogram avatar (initials on a brand color block), name, years of
+// experience, languages, and a direct WhatsApp button. Reusable — the About page (§7,
+// Phase 6) renders three of these.
 //
 // The WhatsApp link is built via the single helper against NEXT_PUBLIC_WHATSAPP_NUMBER
 // (§12); the agent's own `whatsapp` field is domain data, never turned into a raw link.
